@@ -1,0 +1,4 @@
+pipdeptree
+django
+numpy
+simpy

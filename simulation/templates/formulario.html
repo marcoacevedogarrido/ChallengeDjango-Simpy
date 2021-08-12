@@ -1,0 +1,44 @@
+<html>
+<style>
+ .formulario {
+   margin-left: 20px;
+ }
+ .formulario .ver2 {
+   margin-bottom: 3%;
+ }
+ input {
+   max-width: 50%;
+ }
+ select {
+   max-width: 50%;
+ }
+ .btn-success {
+   margin-top: 2%;
+ }
+</style>
+  <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  </head>
+  {% block content %}
+  	<div class='formulario'>
+  			<form method="POST" class='simulation'>
+          {% csrf_token %}
+  				<table>
+            <div class="ver2">
+              <h3>Ingreso de Cajer@s</h3>
+            </div>
+            <h4>Datos Simulacion</h4>
+            {{ formsimulation.as_table }}
+            {{ formcashier.as_table }}
+            {{ formarrival.as_table }}
+  				</table>
+          <button type="submit" class="btn btn-success">Ingresar</button>
+          <div class='btnchart'>
+            <a class='btn btn-link' href='{% url 'index' %}'>Volver</a>
+          </div>
+  			</form>
+  		</div>
+  {% endblock %}
+</html>
